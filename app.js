@@ -1,11 +1,11 @@
 const express = require('express');
-const router = require("./routes/pages");
-
 const app = express();
 const PORT = 3000;
 
-//implementing routes
-app.use(router);
+app.get("/user/:id", (req, res) => {
+    const userId = req.params.id;
+    res.send(`User id is ${userId}`);
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
