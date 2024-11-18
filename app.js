@@ -12,6 +12,7 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
     console.log("This works second"); //route handler
 });
+
 app.get("/user/:id", (req, res) => {
     const userId = req.params.id;
     res.send(`User id is ${userId}`);
