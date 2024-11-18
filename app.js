@@ -9,8 +9,10 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get('/', (req, res) => {
-    console.log("This works second"); //route handler
+app.post('/create', (req, res) => {
+    const userData = req.body;
+    const JSON = JSON.stringify(userData);
+    res.send(`User data recieved: ${Json.stringify(userData)}`);
 });
 
 app.get("/user/:id", (req, res) => {
